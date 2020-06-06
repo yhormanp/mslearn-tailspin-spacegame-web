@@ -9,7 +9,8 @@ trigger:
 variables:
 - name: one
   value: initialValue
-  buildConfiguration: 'Release'
+- name: buildConfiguration
+  value: Release
   # runGulp: 'false'
   
 
