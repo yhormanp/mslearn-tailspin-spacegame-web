@@ -7,11 +7,11 @@ trigger:
 - '*'
 
 variables:
+- name: one
+  value: initialValue
   buildConfiguration: 'Release'
   # runGulp: 'false'
-  # a regular variable
-- name: runGulp
-  value: 'false'
+  
 
 stages:
 - stage: 'Build'
