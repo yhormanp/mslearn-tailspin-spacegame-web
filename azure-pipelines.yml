@@ -1,5 +1,5 @@
 parameters:
-- name: yesNo # name of the parameter; required
+- name: runGulp # name of the parameter; required
   type: boolean # data type of the parameter; required
   default: false
 
@@ -7,8 +7,8 @@ trigger:
 - '*'
 
 variables:
-- name: one
-  value: initialValue
+- name: runGulp
+  value: 'false'
 - name: buildConfiguration
   value: Release
   # runGulp: 'false'
