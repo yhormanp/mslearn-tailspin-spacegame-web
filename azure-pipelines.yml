@@ -47,7 +47,7 @@ stages:
 
     - task: gulp@1
       # condition: eq(variables['runGulp'], 'true')
-      condition: eq(parameters.runGulp, 'true')
+      condition: eq(${{ parameters.runGulp }}, 'true')
       displayName: 'Run gulp tasks'
 
     - script: 'echo "$(Build.DefinitionName), $(Build.BuildId), $(Build.BuildNumber)" > buildinfo.txt'
