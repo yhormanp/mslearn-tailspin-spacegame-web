@@ -8,7 +8,10 @@ trigger:
 
 variables:
   buildConfiguration: 'Release'
-  runGulp: 'false'
+  # runGulp: 'false'
+  # a regular variable
+- name: runGulp
+  value: 'false'
 
 stages:
 - stage: 'Build'
