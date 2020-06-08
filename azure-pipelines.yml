@@ -2,6 +2,9 @@ parameters:
 - name: runGulp # name of the parameter; required
   type: boolean # data type of the parameter; required
   default: true
+- name: runTest # name of the parameter; required
+  type: boolean # data type of the parameter; required
+  default: true
 
 trigger:
 - '*'
@@ -69,6 +72,7 @@ stages:
 
     - task: DotNetCoreCLI@2
       displayName: 'Run unit tests - $(buildConfiguration)'
+      condition: eq(${{ parameters.runTest }}, 'true')
       inputs:
         command: 'test'
         arguments: '--no-build --configuration $(buildConfiguration)'
