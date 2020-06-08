@@ -8,6 +8,9 @@ parameters:
 - name: dotnetSdkVersion
   type: string
   default: '3.1.100'
+- name: webAppName
+  type: string
+  default: 'tailspin-space-game-web-release-test'
 
   
 trigger:
@@ -120,6 +123,6 @@ stages:
             inputs:
               azureSubscription: 'Resource Manager - Tailspin - Space Game'
               # appName: '$(WebAppName)'
-              appName: 'tailspin-space-game-web-release-test'
+              appname: ${{ parameters.webAppName }}
               package: '$(Pipeline.Workspace)/drop/$(buildConfiguration)/*.Web.zip'
               
