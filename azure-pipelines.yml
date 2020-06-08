@@ -39,9 +39,12 @@ stages:
 
     steps:
     - task: DotNetCoreInstaller@0
-      displayName: 'Use .NET Core SDK $(dotnetSdkVersion)'
+      # displayName: 'Use .NET Core SDK $(dotnetSdkVersion)'
+      displayName: 'Use .Net Core SKD ${{ parameters.dotnetSdkVersion }}'
       inputs:
-        version: '$(dotnetSdkVersion)'
+        # version: '$(dotnetSdkVersion)'
+        version: ${{ parameters.dotnetSdkVersion }}
+
 
     - task: Npm@1
       displayName: 'Run npm install'
